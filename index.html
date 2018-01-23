@@ -377,7 +377,7 @@
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/L4t_sources.png" alt=""></p>
 <p>2、解压kernel源码和交叉编译器在合适的位置：</p>
 <pre><code>tar -xvjf kernel_src.tbz2
-</code></pre><h3 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h3><p>内核编译网上有很多方式，我采用GitHub的<a href="https://github.com/jetsonhacks/buildJetsonTX1Kernel" target="_blank" rel="external">jetsonhack</a>的buildJetsonTX1Kernel脚本方式，比较方便，但要下载相应的版本的脚本。写这篇文章时,已经是L4T 28.1版本。因此在commits中找到了L4T 24.2.1版本的。<br>下载后的脚本基本按照<br><strong>getKernelSources.sh</strong><br><strong>patchAndBuildKernel.sh</strong><br><strong>copyImage.sh</strong>三个脚本文件顺序执行，执行的时候需要注意的是内核源码的位置，对于本文，由于内核源码直接在官网下载过了，而且已解压到/usr/src/sources位置，因此可以不运行getKernelSources.sh脚本中源码下载部分，只运行apt-get部分。此外后面步骤的脚本需要修改相应的kernel路径位置。根据<a href="http://www.jetsonhacks.com/2016/06/29/build-custom-kernel-nvidia-jetson-tk1/" target="_blank" rel="external">build-custom-kernel-nvidia-jetson</a>中所述,第一步需要先生成内核配置文件：</p>
+</code></pre><h3 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h3><p>内核编译网上有很多方式，我采用GitHub的<a href="https://github.com/jetsonhacks/buildJetsonTX1Kernel" target="_blank" rel="external">jetsonhack</a>的buildJetsonTX1Kernel脚本方式，比较方便，但要下载相应的版本的脚本。写这篇文章时,已经是L4T 28.1版本。因此在commits中找到了L4T 24.2.1版本的。<br>下载后的脚本基本按照<strong>getKernelSources.sh</strong>,<strong>patchAndBuildKernel.sh</strong>, <strong>copyImage.sh</strong>三个脚本文件顺序执行，执行的时候需要注意的是内核源码的位置，对于本文，由于内核源码直接在官网下载过了，而且已解压到/usr/src/sources位置，因此可以不运行getKernelSources.sh脚本中源码下载部分，只运行apt-get部分。此外后面步骤的脚本需要修改相应的kernel路径位置。根据<a href="http://www.jetsonhacks.com/2016/06/29/build-custom-kernel-nvidia-jetson-tk1/" target="_blank" rel="external">build-custom-kernel-nvidia-jetson</a>中所述,第一步需要先生成内核配置文件：</p>
 <blockquote>
 <p>If you are running a <strong>differently configured or modified kernel</strong>, you may want to generate the .config file in a different manner. One way to do this is to use:</p>
 <p>$ make tegra21_defconfig</p>
@@ -414,7 +414,7 @@
 </li>
 </ol>
 <h4 id="6-重启Tegra-Tx1"><a href="#6-重启Tegra-Tx1" class="headerlink" title="6. 重启Tegra Tx1"></a>6. 重启Tegra Tx1</h4><hr>
-<h5 id="驱动补丁文件的使用"><a href="#驱动补丁文件的使用" class="headerlink" title="驱动补丁文件的使用"></a>驱动补丁文件的使用</h5><p>patch的作用则是将diff记录的结果（即补丁）应用到相应文件（夹）上。为了正确地打上一个补丁，你需要知道这个补丁是从哪个基础版本产生出来的以及这个补丁将要把目前的源代码树变化到什么新的版本。这些信息或者会出现在补丁文件的原数据中，或者可能从文件名中推断出来。由于本文是需要在r24.2.1版本上增加一个驱动文件，因此内核源码需对应下载r24.2.1版本。</p>
+<p>#####* 驱动补丁文件的使用<br>patch的作用则是将diff记录的结果（即补丁）应用到相应文件（夹）上。为了正确地打上一个补丁，你需要知道这个补丁是从哪个基础版本产生出来的以及这个补丁将要把目前的源代码树变化到什么新的版本。这些信息或者会出现在补丁文件的原数据中，或者可能从文件名中推断出来。由于本文是需要在r24.2.1版本上增加一个驱动文件，因此内核源码需对应下载r24.2.1版本。</p>
 <blockquote>
 <p>patch的作用则是将diff记录的结果（即补丁）应用到相应文件（夹）上。最常见的用法为：</p>
 </blockquote>
@@ -434,13 +434,13 @@
 <pre><code>--- old/modules/pcitable       Mon Sep 27 11:03:56 1999
 +++ new/modules/pcitable       Tue Dec 19 20:05:41 2000
 </code></pre><p>如果使用参数<strong>-p0</strong>，那就表示从当前目录找一个叫做old的文件夹，再在它下面寻找 modules/pcitable 文件来执行patch操作。<br>而如果使用参数<strong>-p1</strong>，那就表示忽略第一层目录（即不管old），从当前目录寻找 modules 的文件夹，再在它下面找pcitable。</p>
-<h5 id="如何在Github下载某个程序的commit版本"><a href="#如何在Github下载某个程序的commit版本" class="headerlink" title="如何在Github下载某个程序的commit版本"></a>如何在Github下载某个程序的commit版本</h5><p>步骤一：打开项目，点击commits</p>
+<p>#####* 如何在Github下载某个程序的commit版本<br>步骤一：打开项目，点击commits</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits1.jpg" alt=""></p>
 <p>步骤二：点击红框框里面的东西，英文叫做Browse the repository at this point in history。</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits2.jpg" alt=""></p>
 <p>步骤三：你就会看到Download了，还是历史版本的，这个不是最新的。</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/3.png" alt=""></p>
-<h5 id="Device-Tree编译"><a href="#Device-Tree编译" class="headerlink" title="Device Tree编译"></a>Device Tree编译</h5><p>Device Tree文件的格式为dts，包含的头文件格式为dtsi，dts文件是一种人可以看懂的编码格式。但是uboot和linux不能直接识别，他们只能识别二进制文件，所以需要把dts文件编译成dtb文件。dtb文件是一种可以被kernel和uboot识别的二进制文件。把dts编译成dtb文件的工具是dtc。Linux源码目录下scripts/dtc目录包含dtc工具的源码。在Linux的scripts/dtc目录下除了提供dtc工具外，也可以自己安装dtc工具，linux下执行：sudo apt-get install device-tree-compiler安装dtc工具。dtc工具的使用方法是：dtc –I dts –O dtb –o xxx.dtb xxx.dts，即可生成dts文件对应的dtb文件了。 当然了，dtc –I dtb –O dts –o xxx.dts xxx.dtb反过来即可生成dts文件。其中还提供了一个fdtdump的工具，可以dump dtb文件,方便查看信息。</p>
+<p>#####* Device Tree编译<br>Device Tree文件的格式为dts，包含的头文件格式为dtsi，dts文件是一种人可以看懂的编码格式。但是uboot和linux不能直接识别，他们只能识别二进制文件，所以需要把dts文件编译成dtb文件。dtb文件是一种可以被kernel和uboot识别的二进制文件。把dts编译成dtb文件的工具是dtc。Linux源码目录下scripts/dtc目录包含dtc工具的源码。在Linux的scripts/dtc目录下除了提供dtc工具外，也可以自己安装dtc工具，linux下执行：sudo apt-get install device-tree-compiler安装dtc工具。dtc工具的使用方法是：dtc –I dts –O dtb –o xxx.dtb xxx.dts，即可生成dts文件对应的dtb文件了。 当然了，dtc –I dtb –O dts –o xxx.dts xxx.dtb反过来即可生成dts文件。其中还提供了一个fdtdump的工具，可以dump dtb文件,方便查看信息。</p>
 <hr>
 
           
