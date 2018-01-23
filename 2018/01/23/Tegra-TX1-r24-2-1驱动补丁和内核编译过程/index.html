@@ -94,13 +94,13 @@
 
 
 
-<meta name="description" content="Tegra TX1（r24.2.1）驱动补丁和内核编译过程导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and">
+<meta name="description" content="导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and there is a good to have in t">
 <meta name="keywords" content="Tegra TX1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tegra-TX1-r24-2-1驱动补丁和内核编译过程">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/index.html">
 <meta property="og:site_name" content="Jiac&#39;s blogs">
-<meta property="og:description" content="Tegra TX1（r24.2.1）驱动补丁和内核编译过程导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and">
+<meta property="og:description" content="导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and there is a good to have in t">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/L4t_sources.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/IMG_6660.JPG">
@@ -108,11 +108,11 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/IMG_6695.JPG">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.png">
-<meta property="og:updated_time" content="2018-01-23T07:02:10.133Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/3.png">
+<meta property="og:updated_time" content="2018-01-23T07:09:08.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tegra-TX1-r24-2-1驱动补丁和内核编译过程">
-<meta name="twitter:description" content="Tegra TX1（r24.2.1）驱动补丁和内核编译过程导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and">
+<meta name="twitter:description" content="导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and there is a good to have in t">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/L4t_sources.png">
 
 
@@ -379,7 +379,7 @@
       
 
       
-        <h1 id="Tegra-TX1（r24-2-1）驱动补丁和内核编译过程"><a href="#Tegra-TX1（r24-2-1）驱动补丁和内核编译过程" class="headerlink" title="Tegra TX1（r24.2.1）驱动补丁和内核编译过程"></a>Tegra TX1（r24.2.1）驱动补丁和内核编译过程</h1><h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><p>In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a <strong>custom kernel</strong> or <strong>add some modules here</strong> and there is a good to have in the tool belt.Tegra TX1（r24.2.1）驱动补丁和内核编译过程</p>
+        <h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><p>In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a <strong>custom kernel</strong> or <strong>add some modules here</strong> and there is a good to have in the tool belt.Tegra TX1（r24.2.1）驱动补丁和内核编译过程</p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>1、在官网下载相应版本的kernel源代码。</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/L4t_sources.png" alt=""></p>
 <p>2、解压kernel源码和交叉编译器在合适的位置：</p>
@@ -446,7 +446,7 @@
 <p>步骤二：点击红框框里面的东西，英文叫做Browse the repository at this point in history。</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits2.jpg" alt=""></p>
 <p>步骤三：你就会看到Download了，还是历史版本的，这个不是最新的。</p>
-<p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.png" alt=""></p>
+<p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/3.png" alt=""></p>
 <h5 id="Device-Tree编译"><a href="#Device-Tree编译" class="headerlink" title="Device Tree编译"></a>Device Tree编译</h5><p>Device Tree文件的格式为dts，包含的头文件格式为dtsi，dts文件是一种人可以看懂的编码格式。但是uboot和linux不能直接识别，他们只能识别二进制文件，所以需要把dts文件编译成dtb文件。dtb文件是一种可以被kernel和uboot识别的二进制文件。把dts编译成dtb文件的工具是dtc。Linux源码目录下scripts/dtc目录包含dtc工具的源码。在Linux的scripts/dtc目录下除了提供dtc工具外，也可以自己安装dtc工具，linux下执行：sudo apt-get install device-tree-compiler安装dtc工具。dtc工具的使用方法是：dtc –I dts –O dtb –o xxx.dtb xxx.dts，即可生成dts文件对应的dtb文件了。 当然了，dtc –I dtb –O dts –o xxx.dts xxx.dtb反过来即可生成dts文件。其中还提供了一个fdtdump的工具，可以dump dtb文件,方便查看信息。</p>
 <hr>
 
@@ -621,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tegra-TX1（r24-2-1）驱动补丁和内核编译过程"><span class="nav-number">1.</span> <span class="nav-text">Tegra TX1（r24.2.1）驱动补丁和内核编译过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导语"><span class="nav-number">1.0.1.</span> <span class="nav-text">导语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.0.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核编译"><span class="nav-number">1.0.3.</span> <span class="nav-text">内核编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编辑内核配置–Edit-the-Kernel-Configuration"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">1. 编辑内核配置–Edit the Kernel Configuration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-添加内核源码–采用patch补丁方式"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">2. 添加内核源码–采用patch补丁方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编译内核"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">3. 编译内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Copy-Boot-Image"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">4. Copy Boot Image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Updating-the-DTB"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">5. Updating the DTB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-重启Tegra-Tx1"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">6. 重启Tegra Tx1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#驱动补丁文件的使用"><span class="nav-number">1.0.3.6.1.</span> <span class="nav-text">驱动补丁文件的使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何在Github下载某个程序的commit版本"><span class="nav-number">1.0.3.6.2.</span> <span class="nav-text">如何在Github下载某个程序的commit版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Device-Tree编译"><span class="nav-number">1.0.3.6.3.</span> <span class="nav-text">Device Tree编译</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导语"><span class="nav-number">1.</span> <span class="nav-text">导语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核编译"><span class="nav-number">3.</span> <span class="nav-text">内核编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编辑内核配置–Edit-the-Kernel-Configuration"><span class="nav-number">3.1.</span> <span class="nav-text">1. 编辑内核配置–Edit the Kernel Configuration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-添加内核源码–采用patch补丁方式"><span class="nav-number">3.2.</span> <span class="nav-text">2. 添加内核源码–采用patch补丁方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编译内核"><span class="nav-number">3.3.</span> <span class="nav-text">3. 编译内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Copy-Boot-Image"><span class="nav-number">3.4.</span> <span class="nav-text">4. Copy Boot Image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Updating-the-DTB"><span class="nav-number">3.5.</span> <span class="nav-text">5. Updating the DTB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-重启Tegra-Tx1"><span class="nav-number">3.6.</span> <span class="nav-text">6. 重启Tegra Tx1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#驱动补丁文件的使用"><span class="nav-number">3.6.1.</span> <span class="nav-text">驱动补丁文件的使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何在Github下载某个程序的commit版本"><span class="nav-number">3.6.2.</span> <span class="nav-text">如何在Github下载某个程序的commit版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Device-Tree编译"><span class="nav-number">3.6.3.</span> <span class="nav-text">Device Tree编译</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
