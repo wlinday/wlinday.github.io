@@ -108,8 +108,8 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/IMG_6695.JPG">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.jpg">
-<meta property="og:updated_time" content="2018-01-23T06:55:32.098Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.png">
+<meta property="og:updated_time" content="2018-01-23T07:02:10.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tegra-TX1-r24-2-1驱动补丁和内核编译过程">
 <meta name="twitter:description" content="Tegra TX1（r24.2.1）驱动补丁和内核编译过程导语In this article, we’ll cover how to build a custom kernel for the NVIDIA Jetson TX1. For our purposes, having a way to build a custom kernel or add some modules here and">
@@ -446,8 +446,9 @@
 <p>步骤二：点击红框框里面的东西，英文叫做Browse the repository at this point in history。</p>
 <p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits2.jpg" alt=""></p>
 <p>步骤三：你就会看到Download了，还是历史版本的，这个不是最新的。</p>
-<p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.jpg" alt=""></p>
+<p><img src="/2018/01/23/Tegra-TX1-r24-2-1驱动补丁和内核编译过程/commits3.png" alt=""></p>
 <h5 id="Device-Tree编译"><a href="#Device-Tree编译" class="headerlink" title="Device Tree编译"></a>Device Tree编译</h5><p>Device Tree文件的格式为dts，包含的头文件格式为dtsi，dts文件是一种人可以看懂的编码格式。但是uboot和linux不能直接识别，他们只能识别二进制文件，所以需要把dts文件编译成dtb文件。dtb文件是一种可以被kernel和uboot识别的二进制文件。把dts编译成dtb文件的工具是dtc。Linux源码目录下scripts/dtc目录包含dtc工具的源码。在Linux的scripts/dtc目录下除了提供dtc工具外，也可以自己安装dtc工具，linux下执行：sudo apt-get install device-tree-compiler安装dtc工具。dtc工具的使用方法是：dtc –I dts –O dtb –o xxx.dtb xxx.dts，即可生成dts文件对应的dtb文件了。 当然了，dtc –I dtb –O dts –o xxx.dts xxx.dtb反过来即可生成dts文件。其中还提供了一个fdtdump的工具，可以dump dtb文件,方便查看信息。</p>
+<hr>
 
       
     </div>
